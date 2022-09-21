@@ -20,6 +20,9 @@ elForm.addEventListener("submit", (evt) => {
   pokemon.img = elImgUrlPokemon.value;
   pokemon.weight = elWeightPokemon.value;
   pokemon.name = elNamePokemon.value;
+
+  pokemons.unshift(pokemon);
+  elBoxAdd.prepend(createElBox(pokemon));
 });
 
 function renderPokemon() {
