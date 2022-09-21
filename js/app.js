@@ -1,15 +1,14 @@
 // var elSearchPokemon = document.querySelector([data - search - pokemon]);
 var elHeightPokemon = document.querySelector("[data-height-pokemon]");
 var elWeightPokemon = document.querySelector("[data-weight-pokemon]");
-var elImgUrlPokemon = document.querySelector("[data-image-pokemon]");
+var elImgUrlPokemon = document.querySelector("[data-img-url-pokemon]");
 var elNamePokemon = document.querySelector("[data-name-pokemon]");
 var elForm = document.querySelector("[data-form]");
 var elBoxAdd = document.querySelector("[data-add-box-pokemon]");
 
 renderPokemon();
-
 elForm.addEventListener("submit", (evt) => {
-  evt.prevent.Default();
+  evt.preventDefault();
   var pokemon = {
     name: null,
     img: null,
@@ -43,7 +42,6 @@ function createElBox(pokemon) {
   elPInfo.textContent = `${pokemon.type}`;
   elWeight.textContent = `${pokemon.weight}`;
   elHeight.textContent = `${pokemon.height}`;
-
 
   elPokemonsBox.appendChild(elImage);
   elPokemonsBox.appendChild(elPInfo);
