@@ -45,7 +45,7 @@ function createElBox(pokemon) {
 
   elImage.src = `${pokemon.img}`;
   elH2Name.textContent = `${pokemon.name}`;
-  elPInfo.textContent = `${pokemon.type}`;
+  elPInfo.textContent = `${joinArry(pokemon.type)}`;
   elWeight.textContent = `${pokemon.weight}`;
   elHeight.textContent = `${pokemon.height}`;
 
@@ -59,12 +59,15 @@ function createElBox(pokemon) {
   return elPokemonsBox;
 }
 
-// function joinArry(arr, separator = ", ") {
-//   for (let i = 0; i < arr.length; i++) {
-//     str += arr[i];
+function joinArry(arr, separator = ", ") {
+  var str = "";
+  for (let i = 0; i < arr.length; i++) {
+    str += arr[i];
 
-//     if (i !== arr.length - 1) {
-//       str += separator;
-//     }
-//   }
-// }
+    if (i !== arr.length - 1) {
+      str += separator;
+    }
+  }
+
+  return str;
+}
