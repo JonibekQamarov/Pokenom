@@ -15,14 +15,14 @@ elForm.addEventListener("submit", (evt) => {
     img: null,
     height: null,
     weight: null,
-    type: null,
+    type: [],
   };
 
   pokemon.height = elHeightPokemon.value;
   pokemon.img = elImgUrlPokemon.value;
   pokemon.weight = elWeightPokemon.value;
   pokemon.name = elNamePokemon.value;
-  pokemon.type = elTypePokemon.value;
+  pokemon.type = elTypePokemon.value.split(",");
 
   pokemons.unshift(pokemon);
   elBoxAdd.prepend(createElBox(pokemon));
